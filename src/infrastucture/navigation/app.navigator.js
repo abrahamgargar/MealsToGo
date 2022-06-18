@@ -11,8 +11,8 @@ import { RestaurantsNavigator } from "./restaurants.navigator";
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
-  Restaurants: "md-restaurant",
-  Map: "md-map",
+  Rides: "car",
+  User: "md-person-circle-sharp",
   Settings: "md-settings",
 };
 
@@ -23,7 +23,7 @@ const Settings = () => (
 );
 const Map = () => (
   <SafeArea>
-    <Text>Map</Text>
+    <Text>User</Text>
   </SafeArea>
 );
 
@@ -41,12 +41,12 @@ export const AppNavigator = () => (
     <Tab.Navigator
       screenOptions={createScreenOptions}
       tabBarOptions={{
-        activeTintColor: "tomato",
-        inactiveTintColor: "gray",
+        activeTintColor: "blue",
+        inactiveTintColor: "grey",
       }}
     >
-      <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-      <Tab.Screen name="Map" component={Map} />
+      <Tab.Screen name="Rides" component={RestaurantsNavigator} />
+      <Tab.Screen name="User" component={Map} />
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   </NavigationContainer>

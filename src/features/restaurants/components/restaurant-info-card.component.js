@@ -21,7 +21,7 @@ import {
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
-    name = "Orry Alexander Garcia",
+    name = "Irina Garcia Delfina",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3tiNOO4g8aA0JWZgzNiVFgXXBuoEzQBHdxQ&usqp=CAU",
@@ -30,6 +30,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
+    placeId,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -41,14 +42,19 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} width={20} height={20} />
+          {ratingArray.map((_, i) => (
+              <SvgXml
+                key={`star-${placeId}-${i}`}
+                xml={star}
+                width={20}
+                height={20}
+              />
             ))}
           </Rating>
           <SectionEnd>
             {isClosedTemporarily && (
               <Text variant="label" style={{ color: "red" }}>
-                BOOKED
+                OUT OF SERVICE
                 {/* CLOSED TEMPORARILY */}
               </Text>
             )}
