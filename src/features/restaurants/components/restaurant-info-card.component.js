@@ -3,10 +3,10 @@ import styled from "styled-components/native";
 import { Text, Image, View } from "react-native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
-
 import { Spacer } from "../../../components/spacer/spacer.component";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
+import { Favourite } from "../../../components/favourites/favourite.component";
 
 import {
   RestaurantCard,
@@ -36,8 +36,11 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   return (
-    <RestaurantCard elevation={5}>
+      <RestaurantCard elevation={5}>
+        <View>
+        <Favourite restaurant={restaurant}/>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+      </View>
       <Info>
       <Text variant="label">{name}</Text>
         <Section>

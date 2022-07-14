@@ -18,48 +18,43 @@ export const RestaurantDetailScreen = ({ route }) => {
       <RestaurantInfoCard restaurant={restaurant} />
       <ScrollView>
         <List.Accordion
-          title="Breakfast"
+          title="Ride Info"
           left={(props) => <List.Icon {...props} icon="bread-slice" />}
           expanded={breakfastExpanded}
           onPress={() => setBreakfastExpanded(!breakfastExpanded)}
         >
-          <List.Item title="Eggs Benedict" />
-          <List.Item title="Classic Breakfast" />
+          <List.Item title="From" />
+          <List.Item title="To" />
         </List.Accordion>
 
         <List.Accordion
-          title="Lunch"
+          title="Chat"
           left={(props) => <List.Icon {...props} icon="hamburger" />}
           expanded={lunchExpanded}
           onPress={() => setLunchExpanded(!lunchExpanded)}
         >
-          <List.Item title="Burger w/ Fries" />
-          <List.Item title="Steak Sandwich" />
-          <List.Item title="Mushroom Soup" />
+          <List.Item title="User Chat" />
+          <List.Item title="User Chat" />
+          <List.Item title="User Chat" />
         </List.Accordion>
 
         <List.Accordion
-          title="Dinner"
+          title="Carbon offset"
           left={(props) => <List.Icon {...props} icon="food-variant" />}
           expanded={dinnerExpanded}
           onPress={() => setDinnerExpanded(!dinnerExpanded)}
         >
-          <List.Item title="Spaghetti Bolognese" />
-          <List.Item title="Veal Cutlet with Chicken Mushroom Rotini" />
-          <List.Item title="Steak Frites" />
+          <List.Item title="Benefits" />
+
         </List.Accordion>
 
         <List.Accordion
-          title="Drinks"
+          title="More information"
           left={(props) => <List.Icon {...props} icon="cup" />}
           expanded={drinksExpanded}
           onPress={() => setDrinksExpanded(!drinksExpanded)}
         >
-          <List.Item title="Coffee" />
-          <List.Item title="Tea" />
-          <List.Item title="Modelo" />
-          <List.Item title="Coke" />
-          <List.Item title="Fanta" />
+          <List.Item title="User info" />
         </List.Accordion>
       </ScrollView>
     </SafeArea>

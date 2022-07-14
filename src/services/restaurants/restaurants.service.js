@@ -1,6 +1,19 @@
 import { mocks, mockImages } from "./mock";
 import camelize from "camelize";
 
+
+
+
+//FIREBASE use
+// import firestore from '../../../firebaseProvider.expo';
+
+// const items = async () => {
+//   await firestore().collection('items').get();
+// };l
+
+
+
+
 export const restaurantsRequest = (location) => {
   return new Promise((resolve, reject) => {
     const mock = mocks[location];
